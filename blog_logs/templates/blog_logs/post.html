@@ -1,0 +1,13 @@
+{% extends 'blog_logs/base.html' %}
+
+{% block content %}
+    <p>{{ post.title }}</p>
+    {% if post.text %}
+    {% if post.image %} 
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-img">
+            {% endif %}
+        <p>{{ post.text|linebreaks }}</p>
+    {% else %}
+        <p>No text</p>
+    {% endif %}
+{% endblock content %}

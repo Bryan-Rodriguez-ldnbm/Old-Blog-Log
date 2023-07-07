@@ -1,15 +1,20 @@
 from django.shortcuts import render
 
-from .models import BlogTopic
+from .models import Post
 
 # Create your views here.
 def index(request):
     """The home page for Learning Log."""
     return render(request, 'blog_logs/index.html')
 
-def BlogTopic(request, topic_id):
-    """Show a single Blog and its associated Entry"""
-    blog = BlogTopic.object.get(id=topic_id)
-    entries = blog.entry_set.order_by('-date_added')
-    context = {'blog': blog, 'entries': entries}
-    return render(request, 'blog_logs/index.html')
+def posts(request):
+    """Show all Bogs and its associated Entry"""
+    posts = Post.objects.order_by('date_added')
+    context = {'posts': posts}
+    return render(request, 'blog_logs/posts.html', context)
+
+def post(request, post_id):
+    """Show the full post"""
+    post = Post.objects.get(id=post_id)
+    context = {'post': post}
+    return render(request, 'blog_logs/post.html', context)

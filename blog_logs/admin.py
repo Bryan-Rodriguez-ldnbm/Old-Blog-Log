@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from .models import BlogTopic, BlogEntry
+from .models import Post
 
 # Register your models here.
-admin.site.register(BlogTopic)
-admin.site.register(BlogEntry)
+admin.site.register(Post)
