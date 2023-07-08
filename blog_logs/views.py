@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 from .models import Post
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 # Create your views here.
 def index(request):
     """The home page for Learning Log."""
