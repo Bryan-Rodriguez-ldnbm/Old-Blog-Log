@@ -12,7 +12,17 @@ def index(request):
 def posts(request):
     """Show all Bogs and its associated Entry"""
     posts = Post.objects.order_by('date_added')
-    context = {'posts': posts}
+    paginator = Paginator(posts, 4)
+    page_num = request.GET.get('page')
+
+    try:
+        page_obj = paginator.page(page_num)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
+    context = {'page_obj': page_obj}
+
     return render(request, 'blog_logs/posts.html', context)
 
 def post(request, post_id):

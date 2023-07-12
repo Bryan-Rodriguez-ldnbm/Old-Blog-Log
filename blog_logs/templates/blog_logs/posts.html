@@ -3,7 +3,7 @@
 {% block content %}
     <p>Posts</p>
     <ul>
-        {% for post in posts %}
+        {% for post in page_obj %}
         <li style="list-style-type: none;">
             {% if post.image %} 
                 <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-img">
@@ -16,4 +16,5 @@
           <li>No posts have been added</li>
         {% endfor %}
     </ul>
+    {% include 'blog_logs/pagination.html' %}
 {% endblock content %}

@@ -2,10 +2,10 @@
 
 {% block content %}
     <p>{{ post.title }}</p>
-    {% if post.text %}
     {% if post.image %} 
-                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-img">
-            {% endif %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-img">
+    {% endif %}
+    {% if post.text %}
         <p>{{ post.text|linebreaks }}</p>
     {% else %}
         <p>No text</p>
