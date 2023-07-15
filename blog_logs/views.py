@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .models import Post
 
@@ -11,7 +11,7 @@ def index(request):
 
 def posts(request):
     """Show all Bogs and its associated Entry"""
-    posts = Post.objects.order_by('date_added')
+    posts = Post.objects.order_by('-date_added')
     paginator = Paginator(posts, 4)
     page_num = request.GET.get('page')
 
