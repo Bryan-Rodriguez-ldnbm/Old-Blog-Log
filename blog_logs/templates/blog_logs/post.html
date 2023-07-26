@@ -1,13 +1,18 @@
 {% extends 'blog_logs/base.html' %}
 
 {% block content %}
-    <p>{{ post.title }}</p>
-    {% if post.image %} 
-        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-img">
-    {% endif %}
-    {% if post.text %}
-        <p>{{ post.date_added|date:'M d, Y' }}</p>
-        <p>{{ post.text|linebreaks }}</p>
-        <p>No text</p>
-    {% endif %}
+    <div class="post">
+        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+        <header id="post-header">
+            <p class="title">{{ post.title }}</p>
+            <p class="post-date">{{ post.date_added|date:'M d, Y' }}</p>
+        </header>
+        <div class="post-content">
+            {% if post.text %}
+                <p class="post-text">{{ post.text|linebreaks }}</p>
+            {% else %}
+                <p>No text</p>
+            {% endif %}
+        </div>
+    </div>
 {% endblock content %}

@@ -1,4 +1,129 @@
-.post-img {
-    width: 200px;
-    height: 200px;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.nav-bar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav-bar a {
+    float: left;
+    color: azure;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+.nav-bar a:hover {
+    background-color: azure;
+    color: black;
+}
+
+.cards {
+    display: flex;
+    place-items: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.card {
+    width: 650px;
+    height: 205px;
+    margin: 20px;
+    background-color: #f1f1f1;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+}
+
+.card img {
+    height: 100%;
+    object-fit: fill;
+    width: 300px;
+}
+
+.card-contents {
+    padding-left: 20px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+.card-contents h2, p {
+    padding-top: 10px;
+}
+
+.card-contents h2 a {
+    text-decoration: none;
+    color: black;
+}
+
+.card-date {
+    color: slategray;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post img {
+    padding-top: 20px;
+    height: 500px;
+    width: 750px;
+}
+
+#post-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 760px;
+    max-width: 100%;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.post-date {
+    color: slategray;
+    text-align: right;
+}
+
+.post-content {
+    width: 760px;
+}
+
+.pagination {
+    position: relative;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pagination a {
+    color: black;
+    margin: 0;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+.pagination a.active {
+    background-color: #333;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: dimgray;
 }
